@@ -1,19 +1,25 @@
 cnn-forward
 ===========
 
-Using the CNN trained by Torch7 to classify images in C++ with the support of OpenCV
+Using the CNN trained by Torch7 to classify images in: 1). C++ with the support of OpenCV; 2). Matlab.
 
 #Dependency
 1. OpenCV is required to read the images.
 2. Torch7 is required to convert the cnn result(eg. gstrb.net) to txt file.
+3. Matlab is required run the Maltab version of the code.
 
 #How to run the program
 The porgram is writted and test  in Debian GNU/Linux, it is easy to run in other system
 ```
+#for c++
 cd forward-cnn
 cmake .
 make
 ./run
+
+#for matlab
+cd forward-cnn
+run('cnnRun.m')
 ```
 #The structure of the cnn in torch
 ```
@@ -37,3 +43,4 @@ model:add(nn.Linear(256, 43))
 - `./data/gtsrb.net` is trained by Torch7
 - `cnn.cpp cnn.h`: forward cnn class written in c++
 - `run.cpp`: test program
+- `*.m`: matlab file
